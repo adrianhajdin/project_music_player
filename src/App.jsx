@@ -8,7 +8,7 @@ const App = () => (
       <Searchbar />
 
       <div className="p-6 flex flex-row">
-        <div className='flex-1 h-[93vh] overflow-y-scroll hide-scrollbar'>
+        <div className='flex-1 h-[90vh] pb-10 overflow-y-scroll hide-scrollbar'>
           <Home />
         </div>
         <TopPlay />
