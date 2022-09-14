@@ -10,7 +10,7 @@ const links = [
 ];
 
 const Sidebar = () => (
-  <div className="h-screen flex flex-col min-w-[240px] py-10 px-4 bg-[#191624]">
+  <div className="h-screen flex flex-col w-[240px] py-10 px-4 bg-[#191624]">
     <div className="mt-4 flex flex-col">
       {links.map((item) => (
         <NavLink
