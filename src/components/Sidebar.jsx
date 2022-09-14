@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="h-screen xl:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
+      <div className="h-screen md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
         <div className="mt-4 flex flex-col">
           {links.map((item) => (
             <NavLink
@@ -33,7 +33,7 @@ const Sidebar = () => {
       </div>
 
       {/* Mobile sidebar */}
-      <div className="absolute xl:hidden block top-4 right-4">
+      <div className="absolute md:hidden block top-4 right-4">
         {!mobileMenuOpen ? (
           <MenuIcon className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(true)} />
         ) : (
