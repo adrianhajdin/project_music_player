@@ -10,8 +10,8 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
 
   return (
     <div className="flex flex-col w-[270px] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
-      <div className="relative w-full h-60">
-        <div className={`absolute inset-0 justify-center items-center ${activeSong.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}`}>
+      <div className="relative w-full h-60 group">
+        <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}`}>
           {isPlaying && activeSong.title === song.title ? (
             <FaPauseCircle size={35} onClick={() => dispatch(playPause(false))} />
           ) : (

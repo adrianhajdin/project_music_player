@@ -24,7 +24,7 @@ const Home = () => {
   const songs = location.pathname.startsWith('/search') ? data.map((song) => song.track) : data;
 
   return (
-    <div className="flex flex-wrap gap-6">
+    <div className="flex flex-wrap gap-8">
       {songs?.map((song, i) => (
         <SongCard
           key={song.key}
