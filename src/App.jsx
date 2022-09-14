@@ -7,8 +7,8 @@ const App = () => (
     <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
       <Searchbar />
 
-      <div className="p-6 flex flex-row">
-        <div className='flex-1 h-[90vh] pb-10 overflow-y-scroll hide-scrollbar'>
+      <div className="p-6 flex xl:flex-row flex-col-reverse xl:h-[90vh] h-full overflow-y-scroll hide-scrollbar">
+        <div className='flex-1 pb-10'>
           <Home />
         </div>
         <TopPlay />
