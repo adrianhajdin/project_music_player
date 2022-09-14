@@ -33,7 +33,7 @@ const Sidebar = () => {
       </div>
 
       {/* Mobile sidebar */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute xl:hidden block top-4 right-4">
         {!mobileMenuOpen ? (
           <MenuIcon className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(true)} />
         ) : (
