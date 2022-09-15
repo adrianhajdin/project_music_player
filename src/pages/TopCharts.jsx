@@ -1,16 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 
 import { SongCard } from '../components';
-import { useFetchSongsBySearchQuery } from '../redux/services/shazamCore';
+import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 
-const Search = () => {
-  const { searchTerm } = useParams();
+const TopCharts = () => {
+  const { data, isFetching, error } = useGetTopChartsQuery();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data, isFetching, error } = useFetchSongsBySearchQuery(searchTerm);
-
-  const songs = data?.tracks?.hits.map((song) => song.track);
 
   if (isFetching) {
     return (
@@ -20,11 +16,13 @@ const Search = () => {
     );
   }
 
+  console.log(data);
+
   if (error) return <p>Something went wrong...</p>;
 
   return (
     <div className="flex flex-wrap gap-8">
-      {songs.map((song, i) => (
+      {data.map((song, i) => (
         <SongCard
           key={song.key}
           song={song}
@@ -38,4 +36,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default TopCharts;

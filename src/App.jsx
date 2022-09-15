@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { Searchbar, Sidebar, TopPlay } from './components';
-import { ArtistDetails, Artists, Home, Search, SongDetails } from './pages';
+import { ArtistDetails, Artists, Home, Search, SongDetails, TopCharts } from './pages';
 
 const App = () => (
   <div className="flex">
@@ -14,6 +14,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/artists" element={<Artists />} />
+            <Route path="/top-charts" element={<TopCharts />} />
+
             <Route path="/artists/:id" element={<ArtistDetails />} />
             <Route path="/songs/:songid" element={<SongDetails />} />
             <Route path="/search/:searchTerm" element={<Search />} />
