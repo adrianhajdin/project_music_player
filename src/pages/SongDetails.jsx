@@ -4,7 +4,7 @@ import { DetailsHeader } from '../components';
 
 import { useFetchArtistDetailsQuery, useGetSongDetailsQuery } from '../redux/services/shazamCore';
 
-const ArtistDetails = () => {
+const SongDetails = () => {
   const { songid, id: artistId } = useParams();
   const { data: songData, isFetching: isFetchinSongDetails } = useGetSongDetailsQuery({ songid });
   const {
@@ -38,4 +38,4 @@ const ArtistDetails = () => {
   );
 };
 
-export default ArtistDetails;
+export default SongDetails;

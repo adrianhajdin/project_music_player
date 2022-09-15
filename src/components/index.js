@@ -3,6 +3,7 @@ import Searchbar from './Searchbar';
 import SongCard from './SongCard';
 import TopPlay from './TopPlay';
 import ArtistCard from './ArtistCard';
+import DetailsHeader from './DetailsHeader';
 
 export {
   TopPlay,
@@ -10,4 +11,5 @@ export {
   SongCard,
   Searchbar,
   ArtistCard,
+  DetailsHeader,
 };
