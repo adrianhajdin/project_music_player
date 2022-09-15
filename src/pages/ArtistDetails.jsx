@@ -1,14 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { DetailsHeader, SongBar } from '../components';
+import { DetailsHeader, RelatedSongs } from '../components';
 
 import { useFetchArtistDetailsQuery, useGetSongDetailsQuery } from '../redux/services/shazamCore';
 import { setActiveSong, playPause } from '../redux/features/playerSlice';
 
 const ArtistDetails = () => {
-  const { songid, id: artistId } = useParams();
   const dispatch = useDispatch();
+  const { songid, id: artistId } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data: songData, isFetching: isFetchinSongDetails } = useGetSongDetailsQuery({ songid });
   const {
@@ -44,25 +44,14 @@ const ArtistDetails = () => {
         songData={songData}
       />
 
-      <div className="flex flex-col">
-        <h1 className="font-bold text-3xl text-white">Related Songs:</h1>
-
-        <div className="mt-6 w-full flex flex-col">
-          {artistData
-          && Object.values(artistData?.songs).map((song, i) => (
-            <SongBar
-              key={song.key}
-              song={song}
-              i={i}
-              artistId={artistId}
-              isPlaying={isPlaying}
-              activeSong={activeSong}
-              handlePauseClick={handlePauseClick}
-              handlePlayClick={handlePlayClick}
-            />
-          ))}
-        </div>
-      </div>
+      <RelatedSongs
+        data={Object.values(artistData?.songs)}
+        artistId={artistId}
+        isPlaying={isPlaying}
+        activeSong={activeSong}
+        handlePauseClick={handlePauseClick}
+        handlePlayClick={handlePlayClick}
+      />
     </div>
   );
 };
