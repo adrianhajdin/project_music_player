@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Artists, Home } from './pages';
+import { ArtistDetails, Artists, Home } from './pages';
 import { Searchbar, Sidebar, TopPlay } from './components';
 
 const App = () => (
@@ -14,6 +14,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/artists" element={<Artists />} />
+            <Route path="/artists/:id" element={<ArtistDetails />} />
           </Routes>
         </div>
         <TopPlay />

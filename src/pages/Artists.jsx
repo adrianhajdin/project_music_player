@@ -8,8 +8,8 @@ const Artists = () => {
 
   if (isFetching) {
     return (
-      <div>
-        Loading...
+      <div className="h-screen text-white">
+        loading...
       </div>
     );
   }
