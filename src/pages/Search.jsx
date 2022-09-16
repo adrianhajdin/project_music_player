@@ -17,17 +17,21 @@ const Search = () => {
   if (error) return <Error />;
 
   return (
-    <div className="flex flex-wrap gap-8">
-      {songs.map((song, i) => (
-        <SongCard
-          key={song.key}
-          song={song}
-          isPlaying={isPlaying}
-          activeSong={activeSong}
-          data={data}
-          i={i}
-        />
-      ))}
+    <div className="flex flex-col">
+      <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Showing results for <span className="font-black">{searchTerm}</span></h2>
+
+      <div className="flex flex-wrap gap-8">
+        {songs.map((song, i) => (
+          <SongCard
+            key={song.key}
+            song={song}
+            isPlaying={isPlaying}
+            activeSong={activeSong}
+            data={data}
+            i={i}
+          />
+        ))}
+      </div>
     </div>
   );
 };

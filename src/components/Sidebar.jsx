@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HashtagIcon, HomeIcon, MenuIcon, PhotographIcon, UserGroupIcon, XIcon } from '@heroicons/react/outline';
 
+import { logo } from '../assets';
+
 const links = [
   { name: 'Home', to: '/', icon: HomeIcon },
   { name: 'Country Tracks', to: '/country-tracks', icon: PhotographIcon },
@@ -15,7 +17,9 @@ const Sidebar = () => {
   return (
     <>
       <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
-        <div className="mt-4 flex flex-col">
+        <img src={logo} alt="logo" className="w-full h-14 object-contain" />
+
+        <div className="mt-10 flex flex-col">
           {links.map((item) => (
             <NavLink
               key={item.name}
