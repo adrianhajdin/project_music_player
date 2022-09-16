@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
-import { SongCard } from '../components';
+import { Error, Loader, SongCard } from '../components';
 import { useFetchSongsByCountryQuery } from '../redux/services/shazamCore';
 
 const CountryTracks = () => {
@@ -19,15 +19,9 @@ const CountryTracks = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (isFetching && loading) {
-    return (
-      <div className="h-screen text-white">
-        loading...
-      </div>
-    );
-  }
+  if (isFetching && loading) return <Loader title="Loading Country Tracks..." />;
 
-  if (error) return <p>Something went wrong...</p>;
+  if (error) return <Error />;
 
   return (
     <div className="flex flex-wrap gap-8">

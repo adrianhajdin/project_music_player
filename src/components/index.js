@@ -7,6 +7,8 @@ import DetailsHeader from './DetailsHeader';
 import SongBar from './SongBar';
 import RelatedSongs from './RelatedSongs';
 import SongPlay from './songplay';
+import Loader from './Loader';
+import Error from './Error';
 
 export {
   TopPlay,
@@ -18,4 +20,6 @@ export {
   SongBar,
   RelatedSongs,
   SongPlay,
+  Loader,
+  Error,
 };

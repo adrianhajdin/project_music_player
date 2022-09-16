@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { DetailsHeader, RelatedSongs } from '../components';
+import { DetailsHeader, Error, Loader, RelatedSongs } from '../components';
 
 import { setActiveSong, playPause } from '../redux/features/playerSlice';
 import { useFetchArtistDetailsQuery, useGetSongDetailsQuery } from '../redux/services/shazamCore';
@@ -17,15 +17,9 @@ const SongDetails = () => {
     error,
   } = useFetchArtistDetailsQuery(artistId);
 
-  if (isFetchinSongDetails || isFetchingArtistDetails) {
-    return (
-      <div className="h-screen text-white">
-        loading...
-      </div>
-    );
-  }
+  if (isFetchinSongDetails || isFetchingArtistDetails) return <Loader title="Searchin song details" />;
 
-  if (error) return 'Something went wrong...';
+  if (error) return <Error />;
 
   const handlePauseClick = () => {
     dispatch(playPause(false));

@@ -1,24 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { SongCard } from '../components';
+import { Error, Loader, SongCard } from '../components';
 import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 
 const TopCharts = () => {
   const { data, isFetching, error } = useGetTopChartsQuery();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
-  if (isFetching) {
-    return (
-      <div className="h-screen text-white">
-        loading...
-      </div>
-    );
-  }
+  if (isFetching) return <Loader title="Loading Top Charts" />;
 
-  console.log(data);
-
-  if (error) return <p>Something went wrong...</p>;
+  if (error) return <Error />;
 
   return (
     <div className="flex flex-wrap gap-8">

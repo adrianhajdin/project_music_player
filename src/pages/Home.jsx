@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { SongCard } from '../components';
+import { Error, Loader, SongCard } from '../components';
 
 import { useFetchSongsByGenreQuery } from '../redux/services/shazamCore';
 
@@ -11,15 +11,9 @@ const Home = () => {
   const { data, isFetching, error } = useFetchSongsByGenreQuery(genreListId || 'POP');
   const location = useLocation();
 
-  if (isFetching) {
-    return (
-      <div className="h-screen text-white">
-        loading...
-      </div>
-    );
-  }
+  if (isFetching) return <Loader title="Loading songs..." />;
 
-  if (error) return <p>Something went wrong...</p>;
+  if (error) return <Error />;
 
   const songs = location.pathname.startsWith('/search') ? data.map((song) => song.track) : data;
 
