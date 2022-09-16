@@ -6,6 +6,7 @@ import ArtistCard from './ArtistCard';
 import DetailsHeader from './DetailsHeader';
 import SongBar from './SongBar';
 import RelatedSongs from './RelatedSongs';
+import SongPlay from './songplay';
 
 export {
   TopPlay,
@@ -16,4 +17,5 @@ export {
   DetailsHeader,
   SongBar,
   RelatedSongs,
+  SongPlay,
 };
