@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="h-screen md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
+      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
         <div className="mt-4 flex flex-col">
           {links.map((item) => (
             <NavLink

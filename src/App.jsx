@@ -13,8 +13,8 @@ const App = () => {
       <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
         <Searchbar />
 
-        <div className="px-6 flex xl:flex-row flex-col-reverse">
-          <div className="flex-1 pb-10 h-[90vh] overflow-y-scroll hide-scrollbar">
+        <div className="px-6 md:h-[calc(100vh-72px)] h-screen overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
+          <div className="flex-1 h-fit pb-20">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/artists" element={<Artists />} />
@@ -25,7 +25,9 @@ const App = () => {
               <Route path="/search/:searchTerm" element={<Search />} />
             </Routes>
           </div>
-          <TopPlay />
+          <div className="xl:sticky relative top-0 h-fit">
+            <TopPlay />
+          </div>
         </div>
 
       </div>
