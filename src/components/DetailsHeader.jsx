@@ -13,17 +13,17 @@ const DetailsHeader = ({ artistId, artistData, songData }) => (
                  ? artistData?.artists[artistId].attributes?.artwork?.url
                    .replace('{w}', '500')
                    .replace('{h}', '500')
-                 : songData?.images.coverart
+                 : songData?.images?.coverart
              }
         className="w-48 h-48 rounded-full object-cover border-2 shadow-xl shadow-black"
       />
 
       <div className="ml-5">
         <p className="font-bold text-3xl text-white">
-          {artistId ? artistData?.artists[artistId].attributes.name : songData?.title}
+          {artistId ? artistData?.artists[artistId].attributes?.name : songData?.title}
         </p>
         {!artistId && (
-          <Link to={`/artists/${songData?.artists[0].adamid}`}>
+          <Link to={`/artists/${songData?.artists[0]?.adamid}`}>
             <p className="text-base text-gray-400 mt-2">{songData?.subtitle}</p>
           </Link>
         )}

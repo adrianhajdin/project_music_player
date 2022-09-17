@@ -14,7 +14,7 @@ const App = () => {
         <Searchbar />
 
         <div className="px-6 md:h-[calc(100vh-72px)] h-screen overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
-          <div className="flex-1 h-fit pb-20">
+          <div className="flex-1 h-fit pb-40">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/artists" element={<Artists />} />
