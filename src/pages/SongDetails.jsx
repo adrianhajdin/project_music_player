@@ -27,8 +27,6 @@ const SongDetails = () => {
     dispatch(playPause(true));
   };
 
-  console.log(songData);
-
   return (
     <div className="flex flex-col">
       <DetailsHeader
