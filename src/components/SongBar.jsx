@@ -34,7 +34,7 @@ const SongBar = ({ song, i, artistId, isPlaying, activeSong, handlePauseClick, h
     ) : (
       <FaPlayCircle
         size={25}
-        onClick={handlePlayClick}
+        onClick={() => handlePlayClick(song, i)}
       />
     )}
   </div>

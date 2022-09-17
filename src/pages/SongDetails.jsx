@@ -11,7 +11,7 @@ const SongDetails = () => {
   const { songid, id: artistId } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
-  const { data: relatedSongs, isFetching: isFetchinRelatedSongs, error } = useGetSongRelatedQuery({ songid });
+  const { data, isFetching: isFetchinRelatedSongs, error } = useGetSongRelatedQuery({ songid });
   const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid });
 
   if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searchin song details" />;
@@ -23,7 +23,7 @@ const SongDetails = () => {
   };
 
   const handlePlayClick = (song, i) => {
-    dispatch(setActiveSong({ song, relatedSongs, i }));
+    dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };
 
@@ -35,7 +35,7 @@ const SongDetails = () => {
       />
 
       <RelatedSongs
-        data={relatedSongs}
+        data={data}
         artistId={artistId}
         isPlaying={isPlaying}
         activeSong={activeSong}
