@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { HashtagIcon, HomeIcon, MenuIcon, PhotographIcon, UserGroupIcon, XIcon } from '@heroicons/react/outline';
+import { HiOutlineHashtag, HiOutlineHome, HiOutlineMenu, HiOutlinePhotograph, HiOutlineUserGroup } from 'react-icons/hi';
+import { RiCloseLine } from 'react-icons/ri';
 
 import { logo } from '../assets';
 
 const links = [
-  { name: 'Discover', to: '/', icon: HomeIcon },
-  { name: 'Around You', to: '/around-you', icon: PhotographIcon },
-  { name: 'Top Artists', to: '/top-artists', icon: UserGroupIcon },
-  { name: 'Top Charts', to: '/top-charts', icon: HashtagIcon },
+  { name: 'Discover', to: '/', icon: HiOutlineHome },
+  { name: 'Around You', to: '/around-you', icon: HiOutlinePhotograph },
+  { name: 'Top Artists', to: '/top-artists', icon: HiOutlineUserGroup },
+  { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },
 ];
 
 const NavLinks = ({ handleClick }) => (
@@ -17,7 +18,7 @@ const NavLinks = ({ handleClick }) => (
       <NavLink
         key={item.name}
         to={item.to}
-        className={`flex flex-row justify-start items-center my-5 text-sm font-medium ${item.current ? 'text-cyan-500' : 'text-gray-400 hover:text-cyan-400'}`}
+        className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400"
         onClick={() => handleClick && handleClick()}
       >
         <item.icon
@@ -43,9 +44,9 @@ const Sidebar = () => {
       {/* Mobile sidebar */}
       <div className="absolute md:hidden block top-6 right-3">
         {!mobileMenuOpen ? (
-          <MenuIcon className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(true)} />
+          <HiOutlineMenu className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(true)} />
         ) : (
-          <XIcon className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(false)} />
+          <RiCloseLine className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(false)} />
         )}
       </div>
 

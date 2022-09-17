@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import { Searchbar, Sidebar, SongPlay, TopPlay } from './components';
-import { ArtistDetails, AroundYou, Home, Search, SongDetails, TopCharts, TopArtists } from './pages';
+import { ArtistDetails, AroundYou, Discover, Search, SongDetails, TopCharts, TopArtists } from './pages';
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
@@ -16,7 +16,7 @@ const App = () => {
         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit pb-40">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Discover />} />
               <Route path="/top-artists" element={<TopArtists />} />
               <Route path="/top-charts" element={<TopCharts />} />
               <Route path="/around-you" element={<AroundYou />} />
