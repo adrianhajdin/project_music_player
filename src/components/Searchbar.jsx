@@ -22,6 +22,7 @@ const Searchbar = () => {
         <SearchIcon aria-hidden="true" className="w-5 h-5 ml-4" />
         <input
           name="search-field"
+          autoComplete="off"
           id="search-field"
           className="flex-1 bg-transparent border-none placeholder-gray-500 outline-none text-base text-white p-4"
           placeholder="Search"

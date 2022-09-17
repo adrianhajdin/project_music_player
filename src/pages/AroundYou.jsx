@@ -3,13 +3,13 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 import { Error, Loader, SongCard } from '../components';
-import { useFetchSongsByCountryQuery } from '../redux/services/shazamCore';
+import { useGetSongsByCountryQuery } from '../redux/services/shazamCore';
 
 const CountryTracks = () => {
   const [country, setCountry] = useState(null);
   const [loading, setLoading] = useState(true);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data, isFetching, error } = useFetchSongsByCountryQuery(country);
+  const { data, isFetching, error } = useGetSongsByCountryQuery(country);
 
   useEffect(() => {
     axios
