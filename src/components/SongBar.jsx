@@ -1,7 +1,8 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
+
+import PlayPause from './PlayPause';
 
 const SongBar = ({ song, i, artistId, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
   <div className={`w-full flex flex-row items-center hover:bg-[#4c426e] ${activeSong?.title === song?.title ? 'bg-[#4c426e]' : 'bg-transparent'} py-2 p-4 rounded-lg cursor-pointer mb-2`}>
@@ -29,19 +30,17 @@ const SongBar = ({ song, i, artistId, isPlaying, activeSong, handlePauseClick, h
         </p>
       </div>
     </div>
-    {artistId ? null : isPlaying && activeSong?.title === song?.title ? (
-      <FaPauseCircle
-        size={25}
-        className="text-gray-300"
-        onClick={handlePauseClick}
-      />
-    ) : (
-      <FaPlayCircle
-        size={25}
-        className="text-gray-300"
-        onClick={() => handlePlayClick(song, i)}
-      />
-    )}
+    {!artistId
+      ? (
+        <PlayPause
+          isPlaying={isPlaying}
+          activeSong={activeSong}
+          song={song}
+          handlePause={handlePauseClick}
+          handlePlay={() => handlePlayClick(song, i)}
+        />
+      )
+      : null}
   </div>
 );
 
