@@ -3,16 +3,12 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { DetailsHeader, Error, Loader, RelatedSongs } from '../components';
 
-import { useFetchArtistDetailsQuery } from '../redux/services/shazamCore';
+import { useGetArtistDetailsQuery } from '../redux/services/shazamCore';
 
 const ArtistDetails = () => {
   const { id: artistId } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const {
-    data: artistData,
-    isFetching: isFetchingArtistDetails,
-    error,
-  } = useFetchArtistDetailsQuery(artistId);
+  const { data: artistData, isFetching: isFetchingArtistDetails, error } = useGetArtistDetailsQuery(artistId);
 
   if (isFetchingArtistDetails) return <Loader title="Loading artist details..." />;
 

@@ -9,12 +9,11 @@ const DetailsHeader = ({ artistId, artistData, songData }) => (
       <img
         alt="profile"
         src={
-               artistId
-                 ? artistData?.artists[artistId].attributes?.artwork?.url
-                   .replace('{w}', '500')
-                   .replace('{h}', '500')
-                 : songData?.images?.coverart
-             }
+          artistId ? artistData?.artists[artistId].attributes?.artwork?.url
+            .replace('{w}', '500')
+            .replace('{h}', '500')
+            : songData?.images?.coverart
+}
         className="sm:w-48 w-28 sm:h-48 h-28 rounded-full object-cover border-2 shadow-xl shadow-black"
       />
 
