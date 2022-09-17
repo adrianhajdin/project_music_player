@@ -19,9 +19,9 @@ const CountryTracks = () => {
       .finally(() => setLoading(false));
   }, [country]);
 
-  if (isFetching && loading) return <Loader title="Loading Country Tracks..." />;
+  if (isFetching && loading) return <Loader title="Loading Songs around you..." />;
 
-  if (error) return <Error />;
+  if (error && !country) return <Error />;
 
   return (
     <div className="flex flex-col">

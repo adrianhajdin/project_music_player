@@ -6,8 +6,8 @@ import { logo } from '../assets';
 
 const links = [
   { name: 'Discover', to: '/', icon: HomeIcon },
-  { name: 'Country Tracks', to: '/country-tracks', icon: PhotographIcon },
-  { name: 'Artists', to: '/artists', icon: UserGroupIcon },
+  { name: 'Around You', to: '/around-you', icon: PhotographIcon },
+  { name: 'Top Artists', to: '/top-artists', icon: UserGroupIcon },
   { name: 'Top Charts', to: '/top-charts', icon: HashtagIcon },
 ];
 

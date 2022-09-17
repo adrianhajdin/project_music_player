@@ -13,10 +13,15 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
       <div className="relative w-full h-56 group">
         <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}`}>
           {isPlaying && activeSong?.title === song.title ? (
-            <FaPauseCircle size={35} onClick={() => dispatch(playPause(false))} />
+            <FaPauseCircle
+              size={35}
+              className="text-gray-300"
+              onClick={() => dispatch(playPause(false))}
+            />
           ) : (
             <FaPlayCircle
               size={35}
+              className="text-gray-300"
               onClick={() => {
                 dispatch(setActiveSong({ song, data, i }));
                 dispatch(playPause(true));
@@ -34,7 +39,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
           </Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
-          <Link to={song.artists ? `/artists/${song?.artists[0]?.adamid}` : '/artists'}>
+          <Link to={song.artists ? `/artists/${song?.artists[0]?.adamid}` : '/top-artists'}>
             {song.subtitle}
           </Link>
         </p>

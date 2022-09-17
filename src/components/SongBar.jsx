@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
 
 const SongBar = ({ song, i, artistId, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
-  <div className="w-full flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer">
+  <div className={`w-full flex flex-row items-center hover:bg-[#4c426e] ${activeSong?.title === song?.title ? 'bg-[#4c426e]' : 'bg-transparent'} py-2 p-4 rounded-lg cursor-pointer mb-2`}>
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
     <div className="flex-1 flex flex-row justify-between items-center">
       <img
@@ -30,10 +30,15 @@ const SongBar = ({ song, i, artistId, isPlaying, activeSong, handlePauseClick, h
       </div>
     </div>
     {artistId ? null : isPlaying && activeSong?.title === song?.title ? (
-      <FaPauseCircle size={25} onClick={handlePauseClick} />
+      <FaPauseCircle
+        size={25}
+        className="text-gray-300"
+        onClick={handlePauseClick}
+      />
     ) : (
       <FaPlayCircle
         size={25}
+        className="text-gray-300"
         onClick={() => handlePlayClick(song, i)}
       />
     )}

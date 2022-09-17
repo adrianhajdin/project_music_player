@@ -48,7 +48,7 @@ const Home = () => {
         <select
           onChange={(e) => dispatch(selectGenreListId(e.target.value))}
           value={genreListId || 'pop'}
-          className="bg-violet-400 text-white p-3 bg-gradient-to-tl from-white/10 to-[#483D8B] backdrop-blur-lg  rounded-lg outline-none sm:mt-0 mt-5"
+          className="bg-black text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
         >
           {genres.map((genre) => (
             <option
