@@ -19,7 +19,7 @@ const Searchbar = () => {
         Search all files
       </label>
       <div className="flex flex-row justify-start items-center">
-        <SearchIcon aria-hidden="true" className="w-5 h-5 " />
+        <SearchIcon aria-hidden="true" className="w-5 h-5 ml-4" />
         <input
           name="search-field"
           id="search-field"

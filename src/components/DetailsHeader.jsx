@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DetailsHeader = ({ artistId, artistData, songData }) => (
   <div className="relative w-full flex flex-col">
-    <div className="w-full bg-gradient-to-l from-transparent to-black h-48" />
+    <div className="w-full bg-gradient-to-l from-transparent to-black sm:h-48 h-28" />
 
     <div className="absolute inset-0 flex items-center">
       <img
@@ -15,11 +15,11 @@ const DetailsHeader = ({ artistId, artistData, songData }) => (
                    .replace('{h}', '500')
                  : songData?.images?.coverart
              }
-        className="w-48 h-48 rounded-full object-cover border-2 shadow-xl shadow-black"
+        className="sm:w-48 w-28 sm:h-48 w-28 rounded-full object-cover border-2 shadow-xl shadow-black"
       />
 
       <div className="ml-5">
-        <p className="font-bold text-3xl text-white">
+        <p className="font-bold sm:text-3xl text-xl text-white">
           {artistId ? artistData?.artists[artistId].attributes?.name : songData?.title}
         </p>
         {!artistId && (
@@ -36,7 +36,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => (
       </div>
     </div>
 
-    <div className="w-full h-44" />
+    <div className="w-full sm:h-44 h-24" />
   </div>
 );
 
