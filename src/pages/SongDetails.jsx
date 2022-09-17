@@ -14,7 +14,7 @@ const SongDetails = () => {
   const { data, isFetching: isFetchinRelatedSongs, error } = useGetSongRelatedQuery({ songid });
   const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid });
 
-  if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searchin song details" />;
+  if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searching song details" />;
 
   if (error) return <Error />;
 
