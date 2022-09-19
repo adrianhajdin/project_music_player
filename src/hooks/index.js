@@ -1,1 +1,0 @@
-export { useScrollPosition } from './useScrollPosition';
