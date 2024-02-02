@@ -43,4 +43,23 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.custom-scrollbar': {
+          /* For WebKit browsers (Chrome, Safari) */
+          '&::-webkit-scrollbar': {
+            width: '0px',
+          },
+
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#4a5568',
+            borderRadius: '5px',
+          },
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 };

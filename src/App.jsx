@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
 import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, TopCharts } from './pages';
- 
+
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
 
@@ -25,7 +25,7 @@ const App = () => {
               <Route path="/search/:searchTerm" element={<Search />} />
             </Routes>
           </div>
-          <div className="xl:sticky relative top-0 h-fit">
+          <div className="xl:sticky relative top-0 max-h-fit overflow-y-auto custom-scrollbar">
             <TopPlay />
           </div>
         </div>
